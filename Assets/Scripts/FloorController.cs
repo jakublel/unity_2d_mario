@@ -44,7 +44,11 @@ public class FloorController : MonoBehaviour
          //}
         
 
-       floorTile1.transform.position += new Vector3(-GameManager.instance.worldScrollingSpeed, 0f, 0f);
+        // naprawiam problem
+
+
+
+        floorTile1.transform.position += new Vector3(-GameManager.instance.worldScrollingSpeed, 0f, 0f);
         floorTile2.transform.position += new Vector3(-GameManager.instance.worldScrollingSpeed, 0f, 0f);
 
         if (floorTile1.transform.position.x < 0) 
