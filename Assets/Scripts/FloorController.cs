@@ -68,7 +68,7 @@ public class FloorController : MonoBehaviour
         }
 
 
-        Debug.Log($"position 1 after chane: " + floorTile1.transform.position);
+        Debug.Log($"position 1 after change: " + floorTile1.transform.position);
         Debug.Log($"position 2 after change: " + floorTile2.transform.position);
 
     }
