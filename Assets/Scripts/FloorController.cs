@@ -56,13 +56,13 @@ public class FloorController : MonoBehaviour
 
         if (floorTile1.transform.position.x < 0) 
         {
-            var newTile = Instantiate(tiles[Random.Range(0, tiles.Length)],);
-
+            var newTile = Instantiate(tiles[Random.Range(0, tiles.Length)],floorTile2.transform.position+new Vector3(18f,0f,0f),Quaternion.identity);
+            Destroy(floorTile1);
 
             
-            //  var tmp = floorTile1;
-            //  floorTile1 = floorTile2;
-            //  floorTile2 = tmp;
+            
+            floorTile1 = floorTile2;
+            floorTile2 = newTile;
 
 
         }
