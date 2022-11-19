@@ -7,11 +7,14 @@ public class FloorController : MonoBehaviour
 
     public GameObject floorTile1;
     public GameObject floorTile2;
-    private void Update()
-    {
-       // Debug.Log("UPDATE");
 
-    }
+    public GameObject[] tiles;
+
+   // private void Update()
+   //   {
+   // Debug.Log("UPDATE");
+   //
+   // }
 
     private void Start()
     {
@@ -53,7 +56,10 @@ public class FloorController : MonoBehaviour
 
         if (floorTile1.transform.position.x < 0) 
         {
-            floorTile1.transform.position = new Vector3(18+18, 0f, 0f);
+            var newTile = Instantiate(tiles[Random.Range(0, tiles.Length)],);
+
+
+            
             //  var tmp = floorTile1;
             //  floorTile1 = floorTile2;
             //  floorTile2 = tmp;
@@ -63,7 +69,7 @@ public class FloorController : MonoBehaviour
 
         if (floorTile2.transform.position.x < 0)
         {
-            floorTile2.transform.position = new Vector3(18 + 18, 0f, 0f);
+            floorTile2.transform.position = new Vector3(18 + 18, -1f, 0f);
             //  var tmp = floorTile1;
             //  floorTile1 = floorTile2;
             //  floorTile2 = tmp;
