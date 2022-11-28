@@ -13,6 +13,10 @@ public class GameManager : MonoBehaviour
 
     public float worldScrollingSpeed = 0.2f;
 
+    public bool inGame;
+    public GameObject gameOverText;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +24,13 @@ public class GameManager : MonoBehaviour
         {
             instance = this;
         }
-        
+
+        InitializeGame();
+    }
+
+    void InitializeGame()
+    {
+        inGame = true;
     }
 
     // Update is called once per frame
@@ -33,5 +43,11 @@ public class GameManager : MonoBehaviour
     void UpdateOnScreenScore()
     {
         scoreText.text = score.ToString("0");
+    }
+
+    public void GameOver()
+    {
+        inGame = false;
+        gameOverText.SetActive(true);
     }
 }
