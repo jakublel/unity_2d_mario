@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -15,7 +16,7 @@ public class GameManager : MonoBehaviour
 
     public bool inGame;
     public GameObject gameOverText;
-
+    public GameObject resetButton;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (!GameManager.instance.inGame) return;
         score += worldScrollingSpeed;
         UpdateOnScreenScore();
     }
@@ -49,5 +51,12 @@ public class GameManager : MonoBehaviour
     {
         inGame = false;
         gameOverText.SetActive(true);
+        resetButton.SetActive(true);
     }
+
+    public void ResetGame()
+    {
+        SceneManager.LoadScene(0);
+    }
+
 }

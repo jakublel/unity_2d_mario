@@ -23,6 +23,7 @@ public class FloorController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!GameManager.instance.inGame) return;
         Debug.Log("FIXED UPDATE");
         //  Debug.Log($"floorTile1: "+ floorTile1);
         //Debug.Log($"floorTile2 " + floorTile2);

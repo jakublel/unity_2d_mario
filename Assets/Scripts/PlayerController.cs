@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
+        if (!GameManager.instance.inGame) return;
+
         if (IsGrounded() && Time.time>=timestamp)
         {
             if(jump || doublejump)
@@ -70,6 +72,7 @@ public class PlayerController : MonoBehaviour
     }
     void PlayerDeath()
     {
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
         GameManager.instance.GameOver();
     }
 }
