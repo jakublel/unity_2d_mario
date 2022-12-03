@@ -54,10 +54,10 @@ public class FloorController : MonoBehaviour
 
         floorTile1.transform.position += new Vector3(-GameManager.instance.worldScrollingSpeed, 0f, 0f);
         floorTile2.transform.position += new Vector3(-GameManager.instance.worldScrollingSpeed, 0f, 0f);
-
-        if (floorTile1.transform.position.x < 0) 
+        
+        if (floorTile1.transform.position.x < 2f) 
         {
-            var newTile = Instantiate(tiles[Random.Range(0, tiles.Length)],floorTile2.transform.position+new Vector3(18f,0f,0f),Quaternion.identity);
+            var newTile = Instantiate(tiles[Random.Range(0, tiles.Length)],floorTile2.transform.position+new Vector3(16f,0f,0f),Quaternion.identity);
             Destroy(floorTile1);
 
             
@@ -68,19 +68,19 @@ public class FloorController : MonoBehaviour
 
         }
 
-        if (floorTile2.transform.position.x < 0)
-        {
-            floorTile2.transform.position = new Vector3(18 + 18, -1f, 0f);
+       // if (floorTile2.transform.position.x < 0f)
+       // {
+          //  floorTile2.transform.position = new Vector3(16 + 16, -1f, 0f);
             //  var tmp = floorTile1;
             //  floorTile1 = floorTile2;
             //  floorTile2 = tmp;
 
 
-        }
+       // }
 
 
-        Debug.Log($"position 1 after change: " + floorTile1.transform.position);
-        Debug.Log($"position 2 after change: " + floorTile2.transform.position);
+        //Debug.Log($"position 1 after change: " + floorTile1.transform.position);
+        //Debug.Log($"position 2 after change: " + floorTile2.transform.position);
 
     }
 }

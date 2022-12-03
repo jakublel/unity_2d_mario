@@ -3135,7 +3135,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2.1
+  m_GravityScale: 2.3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -4210,6 +4210,8 @@ MonoBehaviour:
   - {fileID: 6465488050201811136, guid: 38603643001d2de4c88e447358dd6cd1, type: 3}
   - {fileID: 3677420454367290360, guid: 4b01f62da80b8a54db7d710b0b2575d3, type: 3}
   - {fileID: 6332818799811993865, guid: c9caf1dba90c48b4095077e81fd07249, type: 3}
+  - {fileID: 6332818799811993865, guid: 52aa4b3f7dda2ce47abf603117b8132e, type: 3}
+  - {fileID: 6332818799811993865, guid: 58205705840e62940a1e7e8f7b3f9838, type: 3}
 --- !u!4 &2107389928
 Transform:
   m_ObjectHideFlags: 0
