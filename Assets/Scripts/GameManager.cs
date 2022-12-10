@@ -18,10 +18,14 @@ public class GameManager : MonoBehaviour
     public GameObject gameOverText;
     public GameObject resetButton;
 
+    private int coins;
+
+    public Text coinScoreText;
+
     // Start is called before the first frame update
     void Start()
     {
-        if (instance==null)
+        if (instance == null)
         {
             instance = this;
         }
@@ -29,9 +33,28 @@ public class GameManager : MonoBehaviour
         InitializeGame();
     }
 
+    public void CoinCollected(int value = 1)
+    {
+        coins += value;
+
+        PlayerPrefs.SetInt("Coins",coins);
+        UpdateOnScreenScore();
+    }
+
     void InitializeGame()
     {
         inGame = true;
+
+        if (PlayerPrefs.HasKey("Coins"))
+        {
+            coins = PlayerPrefs.GetInt("Coins");
+        }
+        else
+        {
+            coins = 0;
+            PlayerPrefs.SetInt("Coins", 0);
+        }
+        UpdateOnScreenScore();
     }
 
     // Update is called once per frame
@@ -45,6 +68,7 @@ public class GameManager : MonoBehaviour
     void UpdateOnScreenScore()
     {
         scoreText.text = score.ToString("0");
+        coinScoreText.text = coins.ToString();
     }
 
     public void GameOver()
