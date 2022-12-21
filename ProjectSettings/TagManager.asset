@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Obstacle
+  - Coin
+  - Immortality
   layers:
   - Default
   - TransparentFX
@@ -50,6 +52,9 @@ TagManager:
     locked: 0
   - name: Obstacle
     uniqueID: 1369690373
+    locked: 0
+  - name: coin
+    uniqueID: 2935918777
     locked: 0
   - name: Default
     uniqueID: 0
