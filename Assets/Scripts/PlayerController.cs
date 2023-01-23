@@ -63,6 +63,8 @@ public class PlayerController : MonoBehaviour
         return hit.collider != null;
     }
 
+    
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Obstacle") && !GameManager.instance.immortality.isActive)
@@ -79,6 +81,11 @@ public class PlayerController : MonoBehaviour
             GameManager.instance.ImmortalityCollected();
             Destroy(collision.gameObject);
         
+        }
+        else if (collision.CompareTag("Magnet"))
+        {
+            GameManager.instance.MagnetCollected();
+            Destroy(collision.gameObject);
         }
 
     }

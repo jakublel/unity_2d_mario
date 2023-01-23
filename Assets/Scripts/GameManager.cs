@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
 
     public Immortality immortality;
 
+    public Magnet magnet;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -73,6 +75,7 @@ public class GameManager : MonoBehaviour
 
         UpdateOnScreenScore();
         immortality.isActive = false;
+        magnet.isActive = false;
     }
 
     public void ImmortalityCollected()
@@ -91,6 +94,21 @@ public class GameManager : MonoBehaviour
     {
         worldScrollingSpeed -= immortality.GetSpeedBoost();
         immortality.isActive = false;
+    }
+    public void MagnetCollected()
+    {
+        if (magnet.isActive)
+        {
+            CancelInvoke("CancelMagnet");
+            CancelMagnet();
+        }
+
+        magnet.isActive = true;
+        Invoke("CancelMagnet", magnet.GetDuration());
+    }
+    void CancelMagnet()
+    {
+        magnet.isActive = false;
     }
 
     // Update is called once per frame
